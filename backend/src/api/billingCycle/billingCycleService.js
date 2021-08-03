@@ -32,7 +32,7 @@ BillingCycle.route('summary', (req, res, next) => {
         // Projeto um campo 'credit' com a soma de todos os creditos e um campo deebt com a soma de todos os debitos
         $project: {credit: {$sum: "$credits.value"}, debt: {$sum: "$debts.value"}} 
     }, { 
-        // Agrupa os valores se baseando em algum. Vai transforma a quantidade de registro em um único registro consolidado de registro
+        // Agrupa os valores se baseando em algum critério. Vai transforma a quantidade de registro em um único registro consolidado de registro
         $group: {_id: null, credit: {$sum: "$credit"}, debt: {$sum: "$debt"}}
     }, { 
         // Resultado final do aggregate, retirando o _id

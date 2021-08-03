@@ -12,6 +12,7 @@ module.exports = {
         contentBase: './public',
     },
     resolve: {
+        // Interpretar as extensões
         extensions: ['', '.js', '.jsx'],
         alias: {
             modules: __dirname + '/node_modules',
@@ -34,6 +35,7 @@ module.exports = {
             exclude: '/node_modules/',
             query: {
                 presets: ['es2015', 'react'],
+                // Transpilers para versão antiga do JS
                 plugins: ['transform-object-rest-spread']
             }
         },{
