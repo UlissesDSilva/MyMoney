@@ -1,4 +1,4 @@
-const mongooseMessageError = require('./database')
+const mongooseMessageError = require('mongoose')
 
 mongooseMessageError.Error.messages.general.required = "O atributo '{PATH}' é obrigatório"
 mongooseMessageError.Error.messages.Number.min = "O '{VALUE}' informado é menor que o limite mínimo de '{MIN}'."
