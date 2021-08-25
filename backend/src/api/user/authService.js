@@ -53,6 +53,7 @@ const signup = (req, res, next) => {
         return res.status(400).send({ errors: ['Senha precisar ter: uma letra maiúscula, uma letra minúscula, um número, um caractere especial(@#$%) e tamanho entre 6-20.'] })
     }
 
+    // "genSaltSync" : gera de modo sincrono caracteres que formaram o hash da senha
     const salt = bcrypt.genSaltSync()
     const passwordHash = bcrypt.hashSync(password, salt)
     // 'compareSync' faz um hash em cima do 1º param para comparar com o hash que está np 2º param
